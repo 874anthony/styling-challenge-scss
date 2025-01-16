@@ -1,0 +1,40 @@
+@use "../variables/colors" as colors;
+
+.firm-facts__card {
+  height: clamp(8rem, 12rem, 14rem);
+  padding-inline: 1rem;
+
+  display: flex;
+  align-items: center;
+
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.default,
+.disabled {
+  background-color: colors.$color-white;
+}
+
+.default:hover:not(.second-row-card) {
+  background-color: colors.$secondary-color;
+}
+
+.self-center {
+  justify-content: center;
+}
+
+.second-row-card {
+  padding-top: 1.6rem;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.firm-facts__card.default.second-row-card:hover {
+  border: 0.875rem solid colors.$secondary-color;
+  transition: border 0.3s ease-in;
+}
+
+span {
+  font-size: 0.8rem;
+  color: colors.$primary-color;
+}

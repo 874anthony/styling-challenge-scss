@@ -1,0 +1,50 @@
+@use "../variables/colors" as colors;
+@use "../variables/variables" as vars;
+
+button {
+  font: inherit;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: vars.$rounded;
+  padding: 0.5rem 1rem;
+  text-align: center;
+
+  border: none;
+  outline: 0;
+
+  &:disabled {
+    background-color: #aaaaaa !important;
+
+    &:hover {
+      cursor: not-allowed;
+      border: 0 !important;
+    }
+  }
+}
+
+.button-default,
+.button-icon {
+  background-color: colors.$primary-color;
+  color: colors.$color-white;
+
+  transition: background-color 0.3s ease, transform 0.3s ease, border 0.2s ease;
+}
+
+.button-default:hover {
+  background-color: transparent;
+}
+
+.button-icon:hover {
+  background-color: colors.$secondary-color;
+}
+
+.button-default:not(:disabled):hover,
+.button-icon:not(:disabled):hover {
+  border: 2px solid colors.$color-white;
+}
+
+.one-liner {
+  padding: 1rem 2rem;
+}

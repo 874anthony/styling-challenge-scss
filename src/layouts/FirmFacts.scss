@@ -1,0 +1,41 @@
+@use "../variables/colors" as colors;
+
+.firm-facts {
+  background-color: #2d3e4e;
+  height: 100%;
+
+  & h1 {
+    color: colors.$color-white;
+  }
+
+  & hr {
+    margin-block: 1rem;
+  }
+
+  padding-top: 4rem;
+  padding-inline: 4rem;
+  padding-bottom: 2rem;
+
+  display: flex;
+  flex-direction: column;
+
+  &__grid {
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(8rem, 18rem));
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .firm-facts__grid {
+    grid-template-columns: repeat(3, minmax(8rem, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .firm-facts__card:nth-child(1) {
+    grid-row: 1 / span 2;
+    height: 100%;
+  }
+}
