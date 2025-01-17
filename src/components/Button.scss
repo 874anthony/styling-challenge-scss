@@ -28,23 +28,8 @@ button {
 .button-icon {
   background-color: colors.$primary-color;
   color: colors.$color-white;
-
-  transition: background-color 0.3s ease, transform 0.3s ease, border 0.2s ease;
 }
 
-.button-default:hover {
-  background-color: transparent;
-}
-
-.button-icon:hover {
-  background-color: colors.$secondary-color;
-}
-
-.button-default:not(:disabled):hover,
-.button-icon:not(:disabled):hover {
-  border: 2px solid colors.$color-white;
-}
-
-.one-liner {
+.button-default {
   padding: 1rem 2rem;
 }

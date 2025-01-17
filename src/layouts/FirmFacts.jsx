@@ -21,22 +21,22 @@ const FirmFacts = () => {
         </FirmFactCard>
 
         <FirmFactCard oneLiner={true}>
-          <Button variant="default" />
+          <Button />
         </FirmFactCard>
 
         <FirmFactCard>
           <Button variant="icon" />
         </FirmFactCard>
 
-        <FirmFactCard secondRow={true}>
+        <FirmFactCard variant="border">
           <Button variant="icon" />
         </FirmFactCard>
 
-        <FirmFactCard secondRow={true} disabled>
-          <Button variant="icon" disabled={true} />
+        <FirmFactCard variant="border" disabled>
+          <Button variant="icon" disabled />
         </FirmFactCard>
 
-        <FirmFactCard secondRow={true}>
+        <FirmFactCard variant="border">
           <Button variant="icon" />
         </FirmFactCard>
       </div>

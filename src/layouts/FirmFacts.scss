@@ -3,6 +3,7 @@
 .firm-facts {
   background-color: colors.$primary-color;
   height: 100%;
+  overflow: scroll;
 
   & h1 {
     color: colors.$color-white;
@@ -27,15 +28,19 @@
   }
 }
 
-@media (max-width: 768px) {
-  .firm-facts__grid {
-    grid-template-columns: repeat(3, minmax(8rem, 1fr));
-  }
+.firm-facts__card:nth-child(1) {
+  grid-row: 1 / span 2;
+  height: 100%;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 71em) {
+  .firm-facts__grid {
+    grid-template-columns: repeat(2, minmax(8rem, 18rem));
+  }
+
   .firm-facts__card:nth-child(1) {
-    grid-row: 1 / span 2;
-    height: 100%;
+    grid-column: 1 / span 2;
+    padding-block: 1rem;
+    justify-content: center;
   }
 }

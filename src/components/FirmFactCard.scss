@@ -1,40 +1,61 @@
 @use "../variables/colors" as colors;
 
 .firm-facts__card {
-  height: clamp(8rem, 12rem, 14rem);
+  height: clamp(12rem, 12rem + 0.5vw, 14rem);
   padding-inline: 1rem;
 
   display: flex;
   align-items: center;
 
   transition: background-color 0.3s ease, transform 0.3s ease;
+
+  &[disabled] {
+    cursor: not-allowed;
+  }
 }
 
 .default,
-.disabled {
+.border,
+:disabled {
   background-color: colors.$color-white;
 }
 
-.default:hover:not(.second-row-card) {
-  background-color: colors.$secondary-color;
-}
-
-.self-center {
-  justify-content: center;
-}
-
-.second-row-card {
-  padding-top: 1.6rem;
+.border {
+  padding-top: 1rem;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.firm-facts__card.default.second-row-card:hover {
+.default:nth-child(2):hover {
+  background-color: colors.$secondary-color;
+
+  & button {
+    background-color: transparent;
+    border: 2px solid colors.$color-white;
+
+    transition: background-color 0.3s ease, border 0.2s ease;
+  }
+}
+
+.border {
+  border: 0.875rem solid colors.$color-white;
+}
+
+.border:nth-child(7):hover {
   border: 0.875rem solid colors.$secondary-color;
   transition: border 0.3s ease-in;
+
+  button {
+    background-color: colors.$secondary-color;
+    transition: background-color 0.3s ease-in;
+  }
 }
 
 span {
   font-size: 0.8rem;
   color: colors.$primary-color;
+}
+
+.self-center {
+  justify-content: center;
 }

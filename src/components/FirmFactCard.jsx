@@ -8,14 +8,12 @@ const FirmFactCard = ({
   children,
   variant = "default",
   oneLiner = false,
-  secondRow = false,
   disabled = false,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const cardClass = `firm-facts__card ${variant}`;
-  const selfCenterClass = oneLiner && "self-center";
-  const secondRowClass = secondRow && "second-row-card";
+  const selfCenterClass = oneLiner ? "self-center" : "";
 
   const handleMouseEnter = () => setIsHovered(true);
   const handleMouseLeave = () => setIsHovered(false);
@@ -24,13 +22,14 @@ const FirmFactCard = ({
 
   return (
     <div
-      className={cardClass + " " + selfCenterClass + " " + secondRowClass}
+      className={cardClass + " " + selfCenterClass}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      disabled={disabled}
     >
       {children}
 
-      {secondRow && <span>{secondRowText}</span>}
+      {variant === "border" && <span>{secondRowText}</span>}
     </div>
   );
 };
